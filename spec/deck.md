@@ -46,6 +46,13 @@ frameworks) that acts as a pocket walking guide to historic Pune.
 }
 ```
 
+## Back-to-index shortcut
+
+Every sight slide's header has a small "☰ Index" button (`.index-shortcut`)
+that jumps straight to the index slide (`goTo(2)` — the index is always the
+3rd slide). Delegated click handler lives in `js/app.js` alongside the other
+navigation listeners.
+
 ## Sequencing (important — will change over time)
 
 Slide numbering is **never hardcoded**. It's computed from array position at
@@ -59,15 +66,20 @@ automatically, no other code changes needed.
 
 ## Audio ("Listen" button)
 
-Each sight slide has a Listen/Stop button using the browser's built-in
-`SpeechSynthesis` (Web Speech API) — no plugin, no audio files, no network
-call. It reads `name` + `about` + `whatToNotice` + `folklore` aloud. The
-button is only rendered if `"speechSynthesis" in window` (feature-detected
-once at load). Speech is stopped whenever the slide changes (`goTo()` calls
-`stopSpeech()`), so audio never keeps playing after a swipe to another
-sight. Voice/quality is whatever the device's OS/browser provides — this is
-a deliberate tradeoff for zero cost and zero build step over higher-quality
-pre-generated audio files.
+Every sight slide, plus the About Pune slide, has a Listen/Stop button using
+the browser's built-in `SpeechSynthesis` (Web Speech API) — no plugin, no
+audio files, no network call. A sight slide's button reads `name` +
+`about` + `whatToNotice` + `folklore`; the About Pune button reads
+`window.ABOUT_PUNE`. Sight buttons are identified by `data-sight-id`, the
+About button by `data-audio-source="about"` — `textForAudioBtn()` in
+`js/app.js` branches on whichever attribute is present. If
+`"speechSynthesis" in window` is false (feature-detected once at load),
+dynamic sight buttons are simply never rendered and the static About button
+is removed from the DOM — no dead UI. Speech is stopped whenever the slide
+changes (`goTo()` calls `stopSpeech()`), so audio never keeps playing after
+a swipe to another slide. Voice/quality is whatever the device's OS/browser
+provides — a deliberate tradeoff for zero cost and zero build step over
+higher-quality pre-generated audio files.
 
 ## Deliberate non-goals
 

@@ -6,7 +6,7 @@
   // data/sights-batch-a.js / data/sights-batch-b.js (or add a new batch file
   // and concat it below) to change the sequence — numbering is computed
   // fresh from array position every render, nothing is hardcoded.
-  var SIGHTS = [].concat(window.SIGHTS_BATCH_A || [], window.SIGHTS_BATCH_B || []);
+  var SIGHTS = [].concat(window.SIGHTS_BATCH_A || [], window.SIGHTS_BATCH_B || [], window.SIGHTS_BATCH_C || []);
 
   var track = document.getElementById("track");
   var app = document.getElementById("app");
@@ -69,7 +69,12 @@
 
       section.innerHTML =
         '<header class="sight-header">' +
-          '<span class="sight-eyebrow">Sight ' + (i + 1) + ' of ' + SIGHTS.length + '</span>' +
+          '<div class="sight-header-top">' +
+            '<span class="sight-eyebrow">Sight ' + (i + 1) + ' of ' + SIGHTS.length + '</span>' +
+            '<button class="index-shortcut" type="button" aria-label="Back to index">' +
+              '<span class="index-shortcut-icon">☰</span> Index' +
+            '</button>' +
+          '</div>' +
           '<h2>' + sight.name + '</h2>' +
           '<div class="sight-actions">' +
             '<a class="maps-link" target="_blank" rel="noopener" href="' + mapsUrl(sight.mapQuery) + '">' +
@@ -118,10 +123,7 @@
     activeAudioBtn = null;
   }
 
-  function speakSight(sight, btn) {
-    var text = sight.name + ". " + sight.about +
-      " What to notice: " + sight.whatToNotice +
-      " Folklore and fun facts: " + sight.folklore;
+  function speakText(text, btn) {
     var utter = new SpeechSynthesisUtterance(text);
     utter.rate = 0.95;
     utter.onend = stopSpeech;
@@ -131,15 +133,32 @@
     window.speechSynthesis.speak(utter);
   }
 
+  function textForAudioBtn(btn) {
+    var sightId = btn.getAttribute("data-sight-id");
+    if (sightId) {
+      var sight = SIGHTS.find(function (s) { return s.id === sightId; });
+      if (!sight) return "";
+      return sight.name + ". " + sight.about +
+        " What to notice: " + sight.whatToNotice +
+        " Folklore and fun facts: " + sight.folklore;
+    }
+    if (btn.getAttribute("data-audio-source") === "about") {
+      return window.ABOUT_PUNE || "";
+    }
+    return "";
+  }
+
   if (SPEECH_SUPPORTED) {
-    track.addEventListener("click", function (e) {
+    document.body.addEventListener("click", function (e) {
       var btn = e.target.closest(".audio-btn");
       if (!btn) return;
       if (activeAudioBtn === btn) { stopSpeech(); return; }
-      var sight = SIGHTS.find(function (s) { return s.id === btn.getAttribute("data-sight-id"); });
+      var text = textForAudioBtn(btn);
       stopSpeech();
-      if (sight) speakSight(sight, btn);
+      if (text) speakText(text, btn);
     });
+  } else {
+    document.querySelectorAll(".audio-btn").forEach(function (el) { el.remove(); });
   }
 
   // ---- navigation -------------------------------------------------
@@ -253,6 +272,12 @@
     var btn = e.target.closest(".index-item");
     if (!btn) return;
     goTo(parseInt(btn.getAttribute("data-goto"), 10));
+  });
+
+  track.addEventListener("click", function (e) {
+    var btn = e.target.closest(".index-shortcut");
+    if (!btn) return;
+    goTo(2); // the index slide is always the 3rd slide (after intro, about)
   });
 
   window.addEventListener("hashchange", goToHash);
