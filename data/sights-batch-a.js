@@ -10,6 +10,16 @@ window.SIGHTS_BATCH_A = [
     credit: "Darkhorsedaiko, Wikimedia Commons, CC BY-SA 3.0"
   },
   {
+    id: "pataleshwar-caves",
+    name: "Pataleshwar Caves",
+    mapQuery: "Pataleshwar Cave Temple, Jangli Maharaj Road, Pune",
+    about: "Tucked just off the same JM Road that takes its name from the neighbouring Jangli Maharaj Temple, this rock-cut Shiva shrine is Pune's oldest surviving monument, carved directly out of a single basalt outcrop during the Rashtrakuta period around the 8th century CE. It belongs to the same tradition of monolithic excavation as the far larger Ellora and Elephanta caves, though on a much smaller scale, and the work here was left unfinished — historians believe patronage dried up as Rashtrakuta power declined, leaving the temple frozen mid-carving for over 1,200 years.",
+    whatToNotice: "The circular, pillared Nandi mandapa facing the sanctum, with a large monolithic Nandi bull carved from the same rock; roughly hewn sections toward the rear that reveal the unfinished excavation and the ancient carving technique; and the striking contrast between the temple's silent, cave-cool interior and the traffic streaming past JM Road just outside.",
+    folklore: "Because the temple was carved but never consecrated in every corner, guides point to it as a rare chance to literally see 8th-century stonemasons' work-in-progress — tool marks and half-cut rock faces that a finished monument would never reveal. Despite sitting on one of Pune's busiest roads, many residents pass it for years without realising the city's oldest monument is hiding just below street level, a few hundred metres from the far more visible Jangli Maharaj Temple.",
+    image: "images/pataleshwar-caves.jpg",
+    credit: "Bikashrd, Wikimedia Commons, CC BY-SA 4.0"
+  },
+  {
     id: "shaniwar-wada",
     name: "Shaniwar Wada",
     mapQuery: "Shaniwar Wada, Shaniwar Peth, Pune",
