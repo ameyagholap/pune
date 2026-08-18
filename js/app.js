@@ -18,7 +18,8 @@
   var aboutContent = document.getElementById("aboutContent");
   var introBg = document.getElementById("introBg");
 
-  var FIXED_SLIDES = 3; // intro, about, index
+  var FIXED_SLIDES = 4; // intro, about, hub, index
+  var INDEX_SLIDE = FIXED_SLIDES - 1; // index is always the last fixed slide
   var currentIndex = 0;
   var total = FIXED_SLIDES + SIGHTS.length;
   var SPEECH_SUPPORTED = "speechSynthesis" in window;
@@ -170,7 +171,8 @@
   function hashFor(index) {
     if (index === 0) return "";
     if (index === 1) return "about";
-    if (index === 2) return "index";
+    if (index === 2) return "explore";
+    if (index === INDEX_SLIDE) return "index";
     var sight = SIGHTS[index - FIXED_SLIDES];
     return sight ? sight.id : "";
   }
@@ -201,7 +203,8 @@
     var h = location.hash.replace("#", "");
     if (!h) return goTo(0, { skipHash: true });
     if (h === "about") return goTo(1, { skipHash: true });
-    if (h === "index") return goTo(2, { skipHash: true });
+    if (h === "explore") return goTo(2, { skipHash: true });
+    if (h === "index") return goTo(INDEX_SLIDE, { skipHash: true });
     var i = SIGHTS.findIndex(function (s) { return s.id === h; });
     if (i >= 0) return goTo(FIXED_SLIDES + i, { skipHash: true });
     goTo(0, { skipHash: true });
@@ -277,7 +280,7 @@
   track.addEventListener("click", function (e) {
     var btn = e.target.closest(".index-shortcut");
     if (!btn) return;
-    goTo(2); // the index slide is always the 3rd slide (after intro, about)
+    goTo(INDEX_SLIDE);
   });
 
   window.addEventListener("hashchange", goToHash);
