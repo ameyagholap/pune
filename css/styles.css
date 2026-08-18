@@ -271,6 +271,18 @@ html[data-desktop-blocked="true"] #app { display: none; }
   box-shadow: 0 4px 14px rgba(43, 27, 20, 0.06);
 }
 .hub-card:active { background: var(--gold-light); }
+/* .index-shortcut (below, in SIGHT slides) is reused on the hub's "All
+   Sights" button for its click-delegation hook, but is also the small pill
+   style used elsewhere — this combined-class override wins on specificity
+   and restores the full hub-card look for that one button. */
+.hub-card.index-shortcut {
+  display: flex;
+  gap: 14px;
+  padding: 16px;
+  background: var(--cream-deep);
+  border-radius: 14px;
+}
+.hub-card.index-shortcut:active { background: var(--gold-light); }
 .hub-card-icon {
   flex: 0 0 auto;
   width: 42px;
