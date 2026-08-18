@@ -60,6 +60,16 @@ window.SIGHTS_BATCH_B = [
     credit: "Gauravyawalkar.2012, Wikimedia Commons, CC BY-SA 3.0"
   },
   {
+    id: "vishrambaug-wada",
+    name: "Vishrambaug Wada",
+    mapQuery: "Vishrambaug Wada, Thorale Bajirao Road, Pune",
+    about: "Vishrambaug Wada was built between 1805 and 1811 as the personal residence of Bajirao II, the last of the Peshwas, at a cost of around two lakh rupees. Unlike Shaniwar Wada's fortress-like administrative role, this wada was conceived as a leisure mansion — its very name means 'garden of rest' — where the Peshwa lived for roughly a decade before the British ended Peshwa rule in 1818. Afterwards it passed through use as a courthouse, a school, and municipal offices, and today it houses a post office, a handicrafts outlet, and a small museum on Pune's history.",
+    whatToNotice: "The elaborately carved teak facade and balconies, considered one of the finest surviving examples of Peshwa-era wooden architecture; the cypress-shaped carved columns; the grand first-floor darbar hall with ornate ceilings; and the building's three-storey profile, which earned it the local nickname 'Teen Chowki Wada.'",
+    folklore: "Long after the Peshwas were gone, the wada kept reinventing itself — as a British-era jail, then a Sanskrit 'Hindoo College' in 1821, then decades of municipal offices — so many older Punekars associate it first with paperwork and post office queues rather than royalty. Only in recent decades has restoration work drawn attention back to the building's carved teak halls, once meant purely for a Peshwa's rest and leisure.",
+    image: "images/vishrambaug-wada.jpg",
+    credit: "SPat, Wikimedia Commons, CC BY-SA 3.0"
+  },
+  {
     id: "kesariwada-ganpati",
     name: "Kesariwada Ganpati (Manacha Pachwa Ganpati)",
     mapQuery: "Kesari Wada, Narayan Peth, Pune",
