@@ -48,7 +48,7 @@ frameworks) that acts as a pocket walking guide to historic Pune.
 
 ## Explore hub (slide 3)
 
-Sits between About Pune and the index. Three entry points into the deck:
+Sits between About Pune and the index. Four entry points into the deck:
 - **All Sights** — internal button (`.hub-card.index-shortcut`) that jumps to
   the index slide.
 - **Walk: Manache 5 Ganpati** — external link to a `https://www.google.com/
@@ -79,6 +79,9 @@ Sits between About Pune and the index. Three entry points into the deck:
     array position — so inserting/reordering sights elsewhere in the deck
     does not silently change who's on these walks. Update the URLs by hand
     in `index.html` if a walk's stops should change.
+- **Call Ameya** — `https://wa.me/919545524246`, WhatsApp click-to-chat
+  (no prefilled message — the visitor writes their own). Offers a local buddy
+  ("Puneri") to show the visitor around in person.
 
 ## Back-to-index shortcut
 
