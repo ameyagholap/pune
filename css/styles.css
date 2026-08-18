@@ -69,6 +69,54 @@ button { font-family: inherit; }
   background: var(--cream);
 }
 
+/* ---------- desktop block (js/mobile-guard.js) ------------------------ */
+
+.desktop-block {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(155deg, #5a221f 0%, #7a2e2a 55%, #93402d 100%);
+}
+html[data-desktop-blocked="true"] .desktop-block { display: flex; }
+html[data-desktop-blocked="true"] #app { display: none; }
+
+.desktop-block-content {
+  text-align: center;
+  color: var(--cream);
+  padding: 0 32px;
+  max-width: 420px;
+}
+.desktop-block-motif { font-size: 22px; color: var(--gold-light); margin-bottom: 18px; letter-spacing: 0.3em; }
+.desktop-block-title {
+  font-family: var(--display-font);
+  font-size: 48px;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--gold-light);
+  text-shadow: 0 4px 24px rgba(0,0,0,0.35);
+  margin: 0 0 26px;
+}
+.desktop-block-title span {
+  font-family: var(--header-font);
+  font-size: 14px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--cream);
+  font-weight: 600;
+}
+.desktop-block-text {
+  margin: 0 0 6px;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--gold-light);
+}
+
 /* ---------- shared header ------------------------------------------- */
 
 .slide-header {

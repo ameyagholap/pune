@@ -8,8 +8,11 @@ frameworks) that acts as a pocket walking guide to historic Pune.
 - `index.html` — static shell: intro slide, about-Pune slide, explore-hub
   slide, index slide. Sight slides are injected at runtime by `js/app.js`.
 - `css/styles.css` — all styling. Warm Peshwa-era palette (maroon/terracotta/
-  gold on cream). Desktop/tablet gets a centered "phone" card; phones get the
-  full viewport.
+  gold on cream). Includes the `.desktop-block` overlay (see "Mobile-only
+  gate" below). The old desktop/tablet "centered phone card" rules
+  (`@media (min-width: 720px)`) are still present as a no-JS fallback, but in
+  practice a desktop-width visitor never reaches them — the mobile-only gate
+  redirects/blocks first.
 - `js/app.js` — swipe engine + all rendering. Touch drag with axis-lock (so
   vertical scroll inside a slide's content area doesn't fight the swipe),
   click/keyboard-arrow fallback for desktop, hash-based deep links
@@ -48,9 +51,12 @@ frameworks) that acts as a pocket walking guide to historic Pune.
 
 ## Explore hub (slide 3)
 
-Sits between About Pune and the index. Four entry points into the deck:
+Sits between About Pune and the index. Five entry points into the deck:
 - **All Sights** — internal button (`.hub-card.index-shortcut`) that jumps to
   the index slide.
+- **The Culinary Heritage of Pune** — external link (`target="_blank"`) to
+  `food.html`, a separate standalone page (outside the swipe deck) listing
+  Pune's legendary old eateries — see "Culinary Heritage page" below.
 - **Walk: Manache 5 Ganpati** — external link to a `https://www.google.com/
   maps/dir/?api=1&origin=...&destination=...&waypoints=stop1%7Cstop2...
   &travelmode=walking` URL built by hand, following the mandals' traditional
@@ -120,6 +126,88 @@ changes (`goTo()` calls `stopSpeech()`), so audio never keeps playing after
 a swipe to another slide. Voice/quality is whatever the device's OS/browser
 provides — a deliberate tradeoff for zero cost and zero build step over
 higher-quality pre-generated audio files.
+
+## Mobile-only gate (`js/mobile-guard.js`)
+
+The whole site is mobile-only by design. Every HTML page (`index.html`,
+`food.html`, and any page added later) loads `js/mobile-guard.js` as the
+very first `<script>` in `<head>` — before its stylesheet or any content —
+so a desktop-width visitor is stopped before the page meaningfully renders.
+
+- **Detection is viewport-width based**, not user-agent sniffing: a browser
+  window narrower than 720px (the same breakpoint `css/*.css` already used
+  for the old desktop/tablet layout) counts as mobile. A desktop browser
+  resized narrow will pass; a real phone in landscape on a big tablet could
+  in theory fail — accepted trade-off for simplicity, matches the existing
+  CSS breakpoint exactly.
+- **Non-landing pages** (`food.html`, future pages): if desktop-width,
+  `location.replace("index.html")` — replace, not assign, so the blocked
+  page doesn't sit in browser history.
+- **The landing page** (`index.html`) can't redirect to itself, so it
+  instead sets `window.IS_LANDING_PAGE = true` in an inline `<script>`
+  immediately before loading `mobile-guard.js`. When desktop-width, the
+  guard sets `data-desktop-blocked="true"` on `<html>` instead of
+  redirecting; `css/styles.css`'s `.desktop-block` rules (gated on that
+  attribute) show a full-screen "please open this on your phone" message
+  and hide `#app`.
+- **Adding a new page**: copy the same two lines used in `food.html`'s
+  `<head>` (just the `<script src="js/mobile-guard.js"></script>`, no
+  `IS_LANDING_PAGE` flag) as the first script tag, before any stylesheet.
+- If JavaScript is disabled, the gate never runs and a desktop visitor
+  falls through to the old CSS-only "centered phone card" layout instead of
+  being blocked — a deliberate no-JS fallback rather than a broken page.
+
+## Culinary Heritage page (`food.html`)
+
+A separate, standalone page — not part of the swipeable deck — linked from
+the explore hub (slide 3). Lists Pune's legendary old food joints ("the
+OGs"): bakeries, misal stalls, Irani cafes, thali houses, several dating to
+the pre-independence era. Deliberately **not ranked** — a plain numbered
+list Ameya keeps adding to over time.
+
+- `food.html` — page shell: hero header + `<ol id="foodList">`, populated at
+  runtime by `js/food.js`.
+- `css/food.css` — self-contained stylesheet (own `:root` token block,
+  duplicated from `css/styles.css` rather than shared, since this is a
+  normal scrolling page, not the fixed-viewport swipe app — sharing
+  `styles.css` would inherit its `html, body { overflow: hidden; height:
+  100vh }` rules). Single column on phones, two-column grid from 620px up.
+- `data/food-joints.js` — `window.FOOD_JOINTS`, an array of joint objects
+  (shape below). Array order = display/list order; numbering is computed
+  from array position at render time, same convention as the sights list —
+  never hardcoded. **Array order is also geographic**: sorted east to west
+  by geocoded longitude (descending — highest `lng` first), so the list
+  reads as a walk across the old city from Camp/Pune Station in the east to
+  the river-side Peths in the west. When adding a new joint, geocode its
+  `mapUrl` (resolve the short link to a `google.com/maps/place/...` URL and
+  read the `!3d{lat}!4d{lng}` values out of it) and insert it wherever its
+  `lng` falls in the descending sequence, rather than appending at the end.
+- `js/food.js` — renders `FOOD_JOINTS` into `#foodList`.
+- Images live at `images/food/<slug>.jpg`, downloaded locally and
+  resized/compressed the same way as sight images (see Structure above).
+  `scripts/resize-food-images.ps1` automates this: drop a raw source image
+  in `images/food/` named `<slug>-orig.<ext>` (any format — it decodes via
+  WPF/WIC, so JPEG/PNG/WebP all work) and run the script to produce
+  `images/food/<slug>.jpg` at a 1600px long edge, JPEG quality 78, then
+  delete the `-orig` file. `scripts/check-food-data.js` (run with `node`)
+  sanity-checks that every `FOOD_JOINTS` entry's `image` path actually
+  exists on disk — run it after editing `data/food-joints.js`.
+
+### Food joint object shape
+
+```js
+{
+  id: "kebab-case-slug",
+  name: "Commonly Known Name",
+  mapUrl: "https://maps.app.goo.gl/...", // Ameya's own Google Maps share link, used as-is
+  lat: 18.5148,                          // geocoded from mapUrl, kept for re-sorting
+  lng: 73.8800,                          // longitude drives sort order — see above
+  established: "1930",                   // year or best-attested claim; "" if unknown
+  mustTry: "item1, item2, item3",        // simple comma-separated string
+  image: "images/food/slug.jpg",
+  credit: "Source, license"              // "" if no photo / no attribution needed
+}
+```
 
 ## Deliberate non-goals
 
