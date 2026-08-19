@@ -208,9 +208,3 @@ h1, h2 { font-family: var(--header-font); margin: 0; }
   .food-card-photo { width: 100%; flex-basis: auto; height: 160px; }
   .food-card-body { padding: 14px 16px 16px; }
 }
-
-@media (min-width: 960px) {
-  .food-hero { padding-left: 0; padding-right: 0; }
-  .food-hero > * { max-width: 900px; margin-left: auto; margin-right: auto; }
-  .food-intro { max-width: none; }
-}
