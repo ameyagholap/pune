@@ -6,7 +6,7 @@
   // data/sights-batch-a.js / data/sights-batch-b.js (or add a new batch file
   // and concat it below) to change the sequence — numbering is computed
   // fresh from array position every render, nothing is hardcoded.
-  var SIGHTS = [].concat(window.SIGHTS_BATCH_A || [], window.SIGHTS_BATCH_B || [], window.SIGHTS_BATCH_C || []);
+  var SIGHTS = [].concat(window.SIGHTS_BATCH_A || [], window.SIGHTS_BATCH_B || [], window.SIGHTS_BATCH_C || [], window.SIGHTS_BATCH_D || []);
 
   var track = document.getElementById("track");
   var app = document.getElementById("app");
@@ -17,6 +17,11 @@
   var indexList = document.getElementById("indexList");
   var aboutContent = document.getElementById("aboutContent");
   var introBg = document.getElementById("introBg");
+  var filterToggle = document.getElementById("filterToggle");
+  var filterPanel = document.getElementById("filterPanel");
+
+  var FILTER_TAGS = ["Historical Site", "Temple", "Manache Ganpati", "Ancient Architecture", "Modern Architecture"];
+  var activeFilterTags = new Set(FILTER_TAGS);
 
   var FIXED_SLIDES = 4; // intro, about, hub, index
   var INDEX_SLIDE = FIXED_SLIDES - 1; // index is always the last fixed slide
@@ -53,11 +58,61 @@
       li.appendChild(btn);
       indexList.appendChild(li);
     });
+    applyIndexFilter();
+  }
+
+  // ---- filter: index slide -------------------------------------------------
+  function sightMatchesFilter(sight) {
+    var relevant = (sight.tags || []).filter(function (t) { return FILTER_TAGS.indexOf(t) !== -1; });
+    if (!relevant.length) return true;
+    return relevant.some(function (t) { return activeFilterTags.has(t); });
+  }
+
+  function applyIndexFilter() {
+    var items = indexList.querySelectorAll("li");
+    items.forEach(function (li, i) {
+      var match = sightMatchesFilter(SIGHTS[i]);
+      li.classList.toggle("filtered-out", !match);
+    });
+  }
+
+  if (filterToggle && filterPanel) {
+    filterToggle.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var isOpen = !filterPanel.hasAttribute("hidden");
+      if (isOpen) {
+        filterPanel.setAttribute("hidden", "");
+        filterToggle.setAttribute("aria-expanded", "false");
+      } else {
+        filterPanel.removeAttribute("hidden");
+        filterToggle.setAttribute("aria-expanded", "true");
+      }
+    });
+
+    filterPanel.addEventListener("click", function (e) { e.stopPropagation(); });
+
+    filterPanel.addEventListener("change", function (e) {
+      var cb = e.target.closest("input[type=checkbox]");
+      if (!cb) return;
+      if (cb.checked) activeFilterTags.add(cb.value);
+      else activeFilterTags.delete(cb.value);
+      applyIndexFilter();
+      filterPanel.setAttribute("hidden", "");
+      filterToggle.setAttribute("aria-expanded", "false");
+    });
+
+    document.addEventListener("click", function () {
+      if (!filterPanel.hasAttribute("hidden")) {
+        filterPanel.setAttribute("hidden", "");
+        filterToggle.setAttribute("aria-expanded", "false");
+      }
+    });
   }
 
   // ---- render: sight slides -------------------------------------------------
-  function mapsUrl(query) {
-    return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(query);
+  function mapsUrl(sight) {
+    if (sight.mapUrl) return sight.mapUrl;
+    return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(sight.mapQuery);
   }
 
   function renderSights() {
@@ -77,8 +132,14 @@
             '</button>' +
           '</div>' +
           '<h2>' + sight.name + '</h2>' +
+          (sight.tags && sight.tags.length ?
+            '<div class="sight-tags">' +
+              sight.tags.map(function (t) { return '<span class="tag-chip">' + t + '</span>'; }).join('') +
+            '</div>'
+            : ''
+          ) +
           '<div class="sight-actions">' +
-            '<a class="maps-link" target="_blank" rel="noopener" href="' + mapsUrl(sight.mapQuery) + '">' +
+            '<a class="maps-link" target="_blank" rel="noopener" href="' + mapsUrl(sight) + '">' +
               '<span class="maps-pin">📍</span> Open in Google Maps' +
             '</a>' +
             (SPEECH_SUPPORTED ?
