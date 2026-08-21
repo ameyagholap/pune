@@ -6,7 +6,7 @@
   // data/sights-batch-a.js / data/sights-batch-b.js (or add a new batch file
   // and concat it below) to change the sequence — numbering is computed
   // fresh from array position every render, nothing is hardcoded.
-  var SIGHTS = [].concat(window.SIGHTS_BATCH_A || [], window.SIGHTS_BATCH_B || [], window.SIGHTS_BATCH_C || [], window.SIGHTS_BATCH_D || []);
+  var SIGHTS = [].concat(window.SIGHTS_BATCH_A || [], window.SIGHTS_BATCH_B || [], window.SIGHTS_BATCH_C || [], window.SIGHTS_BATCH_D || [], window.SIGHTS_BATCH_E || []);
 
   var track = document.getElementById("track");
   var app = document.getElementById("app");
@@ -20,7 +20,7 @@
   var filterToggle = document.getElementById("filterToggle");
   var filterPanel = document.getElementById("filterPanel");
 
-  var FILTER_TAGS = ["Historical Site", "Temple", "Manache Ganpati", "Ancient Architecture", "Modern Architecture"];
+  var FILTER_TAGS = ["Historical Site", "Temple", "Manache Ganpati", "Ancient Architecture", "Modern Architecture", "Museum"];
   var activeFilterTags = new Set(FILTER_TAGS);
 
   var FIXED_SLIDES = 4; // intro, about, hub, index
@@ -61,6 +61,22 @@
     applyIndexFilter();
   }
 
+  // ---- filter: sight counts per tag -------------------------------------------------
+  function renderFilterCounts() {
+    if (!filterPanel) return;
+    var counts = {};
+    FILTER_TAGS.forEach(function (t) { counts[t] = 0; });
+    SIGHTS.forEach(function (sight) {
+      (sight.tags || []).forEach(function (t) {
+        if (counts.hasOwnProperty(t)) counts[t]++;
+      });
+    });
+    filterPanel.querySelectorAll(".filter-count").forEach(function (el) {
+      var tag = el.getAttribute("data-tag");
+      el.textContent = "(" + (counts[tag] || 0) + ")";
+    });
+  }
+
   // ---- filter: index slide -------------------------------------------------
   function sightMatchesFilter(sight) {
     var relevant = (sight.tags || []).filter(function (t) { return FILTER_TAGS.indexOf(t) !== -1; });
@@ -90,6 +106,19 @@
     });
 
     filterPanel.addEventListener("click", function (e) { e.stopPropagation(); });
+
+    filterPanel.addEventListener("click", function (e) {
+      var onlyBtn = e.target.closest(".filter-only");
+      if (!onlyBtn) return;
+      var tag = onlyBtn.getAttribute("data-tag");
+      activeFilterTags = new Set([tag]);
+      filterPanel.querySelectorAll("input[type=checkbox]").forEach(function (cb) {
+        cb.checked = cb.value === tag;
+      });
+      applyIndexFilter();
+      filterPanel.setAttribute("hidden", "");
+      filterToggle.setAttribute("aria-expanded", "false");
+    });
 
     filterPanel.addEventListener("change", function (e) {
       var cb = e.target.closest("input[type=checkbox]");
@@ -348,6 +377,7 @@
 
   // ---- init -------------------------------------------------
   renderAbout();
+  renderFilterCounts();
   renderIndex();
   renderSights();
   total = FIXED_SLIDES + SIGHTS.length;

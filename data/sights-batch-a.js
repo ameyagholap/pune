@@ -1,36 +1,36 @@
 window.SIGHTS_BATCH_A = [
   {
-    id: "jangli-maharaj-temple",
-    name: "Jangli Maharaj Temple",
-    mapQuery: "Sadguru Shri Jangli Maharaj Samadhi Temple, Revenue Colony, Pune",
-    tags: ["Temple"],
-    about: "This samadhi temple honours Jangli Maharaj, a wandering ascetic saint who lived in the Bhamburde jungles of what is now Shivajinagar in the late 19th century, and who is remembered as a disciple in the spiritual lineage of Swami Samarth of Akkalkot. After his death in 1890, devotees built this memorial shrine over his samadhi. The temple gave its name to the busy road it stands on — JM Road — one of central Pune's main commercial and cultural arteries, so the saint's memory now anchors one of the city's most walked stretches.",
-    whatToNotice: "The old wooden carvings inside the modest, open-hall shrine; a painting depicting a palkhi (palanquin) procession; the small water tank and fountain in the courtyard; and the contrast between the quiet, contemplative shrine and the busy JM Road traffic just outside.",
-    folklore: "Local legend holds that Jangli Maharaj was once an athlete and soldier who fought in the Rebellion of 1857 before renouncing worldly life to meditate alone in Pune's dense jungles — earning him the name Jangli, or \"of the jungle.\" Devotees still gather for Lavani-style bhajans at the temple, a folk musical tradition rarely associated with formal shrines, said to have been the saint's own preferred way of worship during his lifetime.",
-    image: "images/jangli-maharaj-temple.jpg",
-    credit: "Darkhorsedaiko, Wikimedia Commons, CC BY-SA 3.0"
-  },
-  {
-    id: "pataleshwar-caves",
-    name: "Pataleshwar Caves",
-    mapQuery: "Pataleshwar Cave Temple, Jangli Maharaj Road, Pune",
+    id: "trishund-nageshwar",
+    name: "Trishund Ganpati Temple",
+    mapUrl: "https://share.google/zHxOzrKEqOg4Vlk9W",
     tags: ["Temple", "Ancient Architecture"],
-    about: "Tucked just off the same JM Road that takes its name from the neighbouring Jangli Maharaj Temple, this rock-cut Shiva shrine is Pune's oldest surviving monument, carved directly out of a single basalt outcrop during the Rashtrakuta period around the 8th century CE. It belongs to the same tradition of monolithic excavation as the far larger Ellora and Elephanta caves, though on a much smaller scale, and the work here was left unfinished — historians believe patronage dried up as Rashtrakuta power declined, leaving the temple frozen mid-carving for over 1,200 years.",
-    whatToNotice: "The circular, pillared Nandi mandapa facing the sanctum, with a large monolithic Nandi bull carved from the same rock; roughly hewn sections toward the rear that reveal the unfinished excavation and the ancient carving technique; and the striking contrast between the temple's silent, cave-cool interior and the traffic streaming past JM Road just outside.",
-    folklore: "Because the temple was carved but never consecrated in every corner, guides point to it as a rare chance to literally see 8th-century stonemasons' work-in-progress — tool marks and half-cut rock faces that a finished monument would never reveal. Despite sitting on one of Pune's busiest roads, many residents pass it for years without realising the city's oldest monument is hiding just below street level, a few hundred metres from the far more visible Jangli Maharaj Temple.",
-    image: "images/pataleshwar-caves.jpg",
-    credit: "Bikashrd, Wikimedia Commons, CC BY-SA 4.0"
+    about: "The Trishund Ganpati Temple, tucked into a narrow lane in Somwar Peth near Kamla Nehru Hospital, was built between 1754 and 1770 by Bhimgirji Gosavi, a Nath-lineage ascetic who settled in Pune from Dhampur near Indore and personally funded its construction across sixteen years. Carved entirely from black basalt in a style blending Rajasthani, Malwa and Dravidian influences and consciously echoing the rock-cut cave temples of Ellora, it enshrines Trishund Mayureshwar Ganapati — a singular form of Ganesha with three trunks, six arms and a peacock mount, found nowhere else in Maharashtra. The temple stood forgotten for decades after Gosavi's death until a Pune devotee, Yashwant Anant More, rediscovered and restored it in 1951. Today it is a PMC Heritage Grade I structure, one of the finest surviving examples of late Peshwa-era stone carving in the city.",
+    whatToNotice: "The unique Trishund Mayureshwar Ganapati idol at the centre of the sanctum, its single face sprouting three trunks and six arms as it sits on a peacock; the facade's carving of a chained, one-horned rhinoceros guarded by a soldier, widely read as a sly comment on the East India Company's rising power; the twin dwarapala guardian figures flanking the entrance; the trilingual inscriptions in Devanagari, Persian and Sanskrit — including Bhagavad Gita verses — cut into the sanctum walls; and the raised stone platform and cave-temple-like massing that recall Ellora.",
+    folklore: "Local memory holds that Bhimgirji Gosavi built the temple as a tribute to his own guru, and that parts of its carving were deliberately left slightly unfinished as a mark of humility before the divine — a detail devotees still point to today. Deeper still, in a flooded basement chamber reachable only by a narrow stairway, lies the samadhi of Dalpatgiri Gosavi, a revered successor in the same ascetic lineage. A natural spring keeps the chamber submerged for all but one day a year: on Guru Purnima it is drained and opened, drawing pilgrims who queue for hours for the rare chance to pay respects at the underground shrine.",
+    image: "images/trishund-nageshwar.jpg",
+    credit: "Rohanpawar1812, Wikimedia Commons, CC BY-SA 4.0"
   },
   {
-    id: "shaniwar-wada",
-    name: "Shaniwar Wada",
-    mapQuery: "Shaniwar Wada, Shaniwar Peth, Pune",
-    tags: ["Historical Site", "Ancient Architecture"],
-    about: "Shaniwar Wada was built in 1732 by Peshwa Bajirao I as the fortified palace and administrative seat of the Peshwas, the prime ministers who effectively ruled the Maratha Empire from Pune for nearly a century. Materials were drawn from across Maratha territory — teak from Junnar, stone from Chinchwad, lime from Jejuri — reflecting the empire's reach. Once a sprawling complex of courtyards, fountains, and audience halls, most of its wooden structures were destroyed in an unexplained fire in 1828. Today its massive stone walls and grand gateways survive as one of Pune's most iconic heritage sites.",
-    whatToNotice: "The towering Dilli Darwaza (Delhi Gate) with its small human-sized wicket door built into the huge iron-studded main gate; the seven-storey foundation outline still visible in the empty courtyard where the palace once stood; the restored Hazari Karanje (thousand-jet fountain); and the light-and-sound show held on the grounds most evenings.",
-    folklore: "Shaniwar Wada's most chilling legend concerns the 1773 murder of the young Peshwa Narayanrao, killed by palace guards inside the fort on the orders of his uncle Raghunathrao. Locals say that on moonlit nights, his desperate cry — \"Kaka, mala vachva!\" (\"Uncle, save me!\") — can still be heard echoing through the ruins, making the fort one of Pune's most enduringly retold ghost stories.",
-    image: "images/shaniwar-wada.jpg",
-    credit: "Vasukrishnan57, Wikimedia Commons, CC BY-SA 4.0"
+    id: "bhausaheb-rangari-ganpati",
+    name: "Shrimant Bhausaheb Rangari Ganpati",
+    mapQuery: "Shrimant Bhausaheb Rangari Ganpati, Budhwar Peth, Pune",
+    tags: ["Temple"],
+    about: "This mandal holds a landmark place in Indian history as the very first sarvajanik, or public, Ganeshotsav, established in 1892 by Bhausaheb Laxman Javale — a physician and freedom fighter known as \"Rangari\" after his family's traditional cloth-dyeing trade. A year before Lokmanya Tilak popularised the community festival citywide, Rangari had already installed a public Ganesh idol here as a deliberate act of unity against British rule, and his wada doubled as a meeting point for revolutionaries plotting against the colonial government.",
+    whatToNotice: "The distinctive idol showing Ganesh in the act of slaying a demon, a much more dynamic pose than the usual serene seated form; the same idol, now over a century old, still worshipped annually in its original wood-and-bran construction; and the building's quieter, more intimate scale compared to Pune's larger, more commercialised Ganpati mandals.",
+    folklore: "Bhausaheb Rangari is said to have deliberately chosen a demon-slaying form of Ganesh — rather than the traditional benign, seated deity — as a coded message of resistance to the British, using religious festival trappings to rally ordinary Puneites around a shared cause the colonial administration could not easily suppress, effectively making devotion itself an act of quiet rebellion.",
+    image: "images/bhausaheb-rangari-ganpati.jpg",
+    credit: "DesiBoy101, Wikimedia Commons, CC BY-SA 4.0"
+  },
+  {
+    id: "tambadi-jogeshwari-ganpati",
+    name: "Tambadi Jogeshwari Ganpati (Manacha Dusra Ganpati)",
+    mapQuery: "Tambdi Jogeshwari Temple, Budhwar Peth, Pune",
+    tags: ["Temple", "Manache Ganpati"],
+    about: "In 1545, devotee Trimbak Bendre discovered a self-manifested (swayambhu) idol of Goddess Jogeshwari near the Ambil Odha stream and built a shrine that came to mark Pune's southern boundary — making this one of the city's oldest temples, predating the city's Peshwa-era growth. Revered as the gram daivat (guardian village deity) of old Kasba Peth, it is said Chhatrapati Shivaji Maharaj sought its blessings before Deccan campaigns. In 1893, Lokmanya Tilak designated the Ganpati installed here as the second of Pune's five Manache Ganpati, honouring this deep-rooted guardian status.",
+    whatToNotice: "The idol's distinctive reddish-copper hue, from which 'Tambadi' takes its name; the old stone deepmaal (lamp tower) at the entrance; comparatively modest temple architecture next to the city's grander mandals; its fixed second position in every Ganeshotsav procession order.",
+    folklore: "Centuries of sindoor offerings are said to have given the goddess's idol its deep copper-red complexion, giving the temple its name 'Tambadi' (copper-red) Jogeshwari. Locals hold that Shivaji Maharaj personally visited to seek the goddess's blessing before his Deccan campaigns. Unlike other Manache Ganpati chosen for grandeur, this one earned its rank purely from being tied to Pune's original guardian deity, older than the city itself.",
+    image: "images/tambadi-jogeshwari-ganpati.jpg",
+    credit: "DesiBoy101, Wikimedia Commons, CC BY-SA 4.0"
   },
   {
     id: "tambat-aali",
@@ -77,14 +77,25 @@ window.SIGHTS_BATCH_A = [
     credit: "Phadke09, Wikimedia Commons, CC BY-SA 4.0"
   },
   {
-    id: "bhausaheb-rangari-ganpati",
-    name: "Shrimant Bhausaheb Rangari Ganpati",
-    mapQuery: "Shrimant Bhausaheb Rangari Ganpati, Budhwar Peth, Pune",
-    tags: ["Temple"],
-    about: "This mandal holds a landmark place in Indian history as the very first sarvajanik, or public, Ganeshotsav, established in 1892 by Bhausaheb Laxman Javale — a physician and freedom fighter known as \"Rangari\" after his family's traditional cloth-dyeing trade. A year before Lokmanya Tilak popularised the community festival citywide, Rangari had already installed a public Ganesh idol here as a deliberate act of unity against British rule, and his wada doubled as a meeting point for revolutionaries plotting against the colonial government.",
-    whatToNotice: "The distinctive idol showing Ganesh in the act of slaying a demon, a much more dynamic pose than the usual serene seated form; the same idol, now over a century old, still worshipped annually in its original wood-and-bran construction; and the building's quieter, more intimate scale compared to Pune's larger, more commercialised Ganpati mandals.",
-    folklore: "Bhausaheb Rangari is said to have deliberately chosen a demon-slaying form of Ganesh — rather than the traditional benign, seated deity — as a coded message of resistance to the British, using religious festival trappings to rally ordinary Puneites around a shared cause the colonial administration could not easily suppress, effectively making devotion itself an act of quiet rebellion.",
-    image: "images/bhausaheb-rangari-ganpati.jpg",
+    id: "mahatma-phule-mandai",
+    name: "Mahatma Jyotiba Phule Mandai",
+    mapQuery: "Mahatma Phule Mandai, Shukrawar Peth, Pune",
+    tags: ["Historical Site", "Ancient Architecture"],
+    about: "This Victorian Gothic market hall was built by the Poona Municipality between 1882 and 1886 and opened as 'Reay Market', after the Bombay Presidency governor Lord Reay, with the design credited to WM Ducat and executed by local architects Vasudev Kanitkar and Ramchandra Godbole. In 1938, corporator Acharya Atre renamed it Mahatma Phule Mandai to honour social reformer Jyotirao Phule. For nearly a century it was Pune's principal wholesale produce market, until wholesale trade shifted to Gultekdi in the late 1970s; it still runs as a lively retail market and is a PMC Heritage Grade I structure.",
+    whatToNotice: "The 80-foot octagonal central tower visible from surrounding streets; carved stone and woodwork, gargoyles and ornamental iron pillars typical of Gothic Revival design; tinted glass windows; the eight-sided plan with multiple gates; the contrast between colonial civic grandeur and the everyday bustle of a working vegetable market.",
+    folklore: "Before this building existed, Pune's open-air vegetable market was held right outside Shaniwar Wada, the old Peshwa palace-fortress. British municipal planners relocated and formalised it into this ornate Gothic hall — arguably over-engineered for a produce market — as a deliberate statement of colonial civic order. Punekars still simply call it 'Mandai', and it remains one of the most photographed heritage buildings in the old city.",
+    image: "images/mahatma-phule-mandai.jpg",
     credit: "DesiBoy101, Wikimedia Commons, CC BY-SA 4.0"
+  },
+  {
+    id: "sharada-ganesh-mandir",
+    name: "Shri Sharada Ganesh Mandir (Mandai Ganpati)",
+    mapQuery: "Sharada Ganesh Mandir Mandai Ganpati, Shukrawar Peth, Pune",
+    tags: ["Temple"],
+    about: "Also known as the Akhil Mandai Mandal, this shrine was established on 14 September 1894 by wrestler Nathuram Dongre inside the Mahatma Phule Mandai market building in Shukrawar Peth, barely a year after Lokmanya Tilak launched the Sarvajanik Ganeshotsav movement. Its centrepiece is an idol of Shri Sharada Gajanan — Ganesha paired with Goddess Sharada — worshipped as protector of the market and its traders, tying the mandal permanently to the commercial life of the Mandai around it.",
+    whatToNotice: "A unique papier-mache idol made from paper pulp and wood shavings, one of Pune's earliest eco-friendly Ganesh idols; Ganesha shown seated on a swing (jhula) beside Goddess Sharada; the idol crafted and maintained across generations by the same family of artisans, originally from Sangli; its unusual setting tucked inside the working market building itself.",
+    folklore: "Nathuram Dongre, a wrestler by trade, vowed to install a Ganesh idol if he was blessed with a child; the birth of his child led directly to the mandal's founding in 1894. Its market-side location made it a favourite stop for freedom fighters, and in 1946 it hosted a memorable felicitation of leaders freshly released from British jails, including Jawaharlal Nehru, Sardar Vallabhbhai Patel, Khan Abdul Ghaffar Khan and Sarojini Naidu.",
+    image: "images/sharada-ganesh-mandir.jpg",
+    credit: "Gauravyawalkar.2012, Wikimedia Commons, CC BY-SA 3.0"
   }
 ];

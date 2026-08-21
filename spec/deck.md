@@ -20,7 +20,24 @@ frameworks) that acts as a pocket walking guide to historic Pune.
 - `data/sights-batch-*.js` — each defines `window.SIGHTS_BATCH_X`, an array
   of sight objects (see shape below). `app.js` concatenates every batch, in
   file-include order, into one `SIGHTS` array — **that concatenated order is
-  the display order.**
+  the display order.** As of the Museums batch, this order is deliberately
+  geographic: sights are grouped into distance-from-city-centre clusters
+  (walkable old-city core first, then successively farther rings — Aga Khan
+  Palace/Yerwada-distance places, then Katraj/Pashan/Narhe-distance places,
+  then Chinchwad/Wadgaon Shinde/Khadakwasla-distance places, then the
+  standalone Khed Shivapur outlier), and within each cluster sorted east to
+  west by longitude (descending), the same convention `food.html` uses for
+  its own list — see "Culinary Heritage page" below. When adding a new
+  sight, geocode it (resolve its `mapUrl`/`mapQuery` via Nominatim or by
+  reading `!3d`/`!4d` off the resolved Google Maps URL) and insert it into
+  whichever cluster its distance from Shaniwar Wada (18.5194, 73.8554) falls
+  into, in longitude-descending position within that cluster — don't just
+  append it, and don't necessarily add it to the batch file matching its
+  cluster; batch-file boundaries don't carry meaning, only the concatenated
+  order does, so it's fine to move entries between batch files to keep each
+  file roughly evenly sized (~8-9 entries). Coordinates aren't stored on the
+  sight objects themselves (unlike `food-joints.js`) — they're only used
+  transiently to compute insert position.
 - `images/` — one photo per sight, downloaded locally (not hotlinked) so the
   deck works offline and never breaks when a source page changes. Preferred
   source: Wikimedia Commons, for stable URLs + open licensing. Each image's
@@ -38,11 +55,13 @@ frameworks) that acts as a pocket walking guide to historic Pune.
   id: "kebab-case-slug",       // stable identity, used for #hash deep links
   name: "Commonly Known Name", // resolved from the raw Google Maps address
   mapQuery: "...",             // fed into a maps.google.com search URL — no API key/embed
+  mapUrl: "https://maps.app.goo.gl/...", // alternative to mapQuery: Ameya's own share link, used as-is if present (mapsUrl() in app.js prefers this over mapQuery)
+  tags: ["Temple", "Museum"],  // 0+ of: Historical Site, Temple, Manache Ganpati, Ancient Architecture, Modern Architecture, Museum — must match FILTER_TAGS in app.js and the checkboxes in index.html's filter panel; a sight with no recognized tag always shows regardless of filter state
   about: "...",                // significance / what it is
   whatToNotice: "...",         // specific things to look for on a visit
   folklore: "...",             // legend or fun fact
   image: "images/slug.jpg",
-  credit: "Source, license"
+  credit: "Source, license"    // omit entirely if no clear attribution is available
 }
 ```
 
@@ -104,8 +123,11 @@ concatenated `SIGHTS` array. Ameya may insert new sights **anywhere** in the
 sequence later — to do that, just add/reorder entries in the batch data
 files (or add a new `data/sights-batch-*.js` file and include it in
 `index.html`); every slide number and the index-slide list update
-automatically, no other code changes needed. (The two hub walking routes are
-the one exception — see above, they're hardcoded place lists.)
+automatically, no other code changes needed. By convention the sequence is
+kept geographic (see the distance-cluster + east-to-west rule under
+Structure above) rather than arbitrary, so a new sight should be inserted at
+its geographically correct spot, not just appended. (The two hub walking
+routes are the one exception — see above, they're hardcoded place lists.)
 
 ## Audio ("Listen" button)
 

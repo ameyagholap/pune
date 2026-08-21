@@ -1,5 +1,60 @@
 window.SIGHTS_BATCH_C = [
   {
+    id: "jangli-maharaj-temple",
+    name: "Jangli Maharaj Temple",
+    mapQuery: "Sadguru Shri Jangli Maharaj Samadhi Temple, Revenue Colony, Pune",
+    tags: ["Temple"],
+    about: "This samadhi temple honours Jangli Maharaj, a wandering ascetic saint who lived in the Bhamburde jungles of what is now Shivajinagar in the late 19th century, and who is remembered as a disciple in the spiritual lineage of Swami Samarth of Akkalkot. After his death in 1890, devotees built this memorial shrine over his samadhi. The temple gave its name to the busy road it stands on — JM Road — one of central Pune's main commercial and cultural arteries, so the saint's memory now anchors one of the city's most walked stretches.",
+    whatToNotice: "The old wooden carvings inside the modest, open-hall shrine; a painting depicting a palkhi (palanquin) procession; the small water tank and fountain in the courtyard; and the contrast between the quiet, contemplative shrine and the busy JM Road traffic just outside.",
+    folklore: "Local legend holds that Jangli Maharaj was once an athlete and soldier who fought in the Rebellion of 1857 before renouncing worldly life to meditate alone in Pune's dense jungles — earning him the name Jangli, or \"of the jungle.\" Devotees still gather for Lavani-style bhajans at the temple, a folk musical tradition rarely associated with formal shrines, said to have been the saint's own preferred way of worship during his lifetime.",
+    image: "images/jangli-maharaj-temple.jpg",
+    credit: "Darkhorsedaiko, Wikimedia Commons, CC BY-SA 3.0"
+  },
+  {
+    id: "pataleshwar-caves",
+    name: "Pataleshwar Caves",
+    mapQuery: "Pataleshwar Cave Temple, Jangli Maharaj Road, Pune",
+    tags: ["Temple", "Ancient Architecture"],
+    about: "Tucked just off the same JM Road that takes its name from the neighbouring Jangli Maharaj Temple, this rock-cut Shiva shrine is Pune's oldest surviving monument, carved directly out of a single basalt outcrop during the Rashtrakuta period around the 8th century CE. It belongs to the same tradition of monolithic excavation as the far larger Ellora and Elephanta caves, though on a much smaller scale, and the work here was left unfinished — historians believe patronage dried up as Rashtrakuta power declined, leaving the temple frozen mid-carving for over 1,200 years.",
+    whatToNotice: "The circular, pillared Nandi mandapa facing the sanctum, with a large monolithic Nandi bull carved from the same rock; roughly hewn sections toward the rear that reveal the unfinished excavation and the ancient carving technique; and the striking contrast between the temple's silent, cave-cool interior and the traffic streaming past JM Road just outside.",
+    folklore: "Because the temple was carved but never consecrated in every corner, guides point to it as a rare chance to literally see 8th-century stonemasons' work-in-progress — tool marks and half-cut rock faces that a finished monument would never reveal. Despite sitting on one of Pune's busiest roads, many residents pass it for years without realising the city's oldest monument is hiding just below street level, a few hundred metres from the far more visible Jangli Maharaj Temple.",
+    image: "images/pataleshwar-caves.jpg",
+    credit: "Bikashrd, Wikimedia Commons, CC BY-SA 4.0"
+  },
+  {
+    id: "omkareshwar-shaniwar-peth",
+    name: "Omkareshwar Temple, Shaniwar Peth",
+    mapUrl: "https://maps.app.goo.gl/BW2c7fzr4LyrpWj38",
+    tags: ["Temple", "Ancient Architecture"],
+    about: "The Omkareshwar Temple was built between 1736 and 1738 by Shivrambhat Chitrav, a scholar-engineer who served as spiritual guru to the Peshwa court — among his disciples were Chimaji Appa, brother of Peshwa Bajirao I, and Nanasaheb Peshwe, whose patronage helped fund the temple. Raised on the banks of the Mutha river in Shaniwar Peth in a Hemadpanti-Nagara style, it is crowned by a five-tiered soapstone shikhara carved with mythological figures, and its courtyard holds a large Nandi pavilion alongside subsidiary shrines to Maruti, Shani and Bhavani Mata. For centuries Pune's principal riverside cremation ground until the practice moved elsewhere in 1971, the ghat below the temple was also a gathering place for early twentieth-century nationalists, including Lokmanya Tilak and a young Vinayak Savarkar. Now a PMC Heritage Grade I structure and among the largest temples in the city, it survived the catastrophic Panshet dam-failure flood of 1961 largely intact.",
+    whatToNotice: "The five-tiered, intricately carved soapstone shikhara rising in Nagara style above the sanctum; the large stone Nandi facing the Shiva linga across the open mandapam; subsidiary shrines to Maruti, Shani and Bhavani Mata ringing the courtyard; the broad stone ghat steps descending to the Mutha river, still used for immersions and last rites; and the tall deepstambhs (lamp towers) standing in the temple forecourt.",
+    folklore: "For centuries the ghat below Omkareshwar served as Pune's principal cremation ground, so the temple became inseparable from the city's rites of passage — spoken of in the same breath as birth, death and remembrance. It also has a rebellious streak: in 1906, a young Vinayak Damodar Savarkar gathered his followers at the temple's adjoining 'taalim' (wrestling gymnasium) to publicly burn a pile of British-made cloth, an early act of swadeshi defiance. Lokmanya Tilak, too, is remembered frequenting this taalim, making the temple precinct as much a cradle of the freedom movement as a place of worship.",
+    image: "images/omkareshwar-shaniwar-peth.jpg",
+    credit: "Phadke09, Wikimedia Commons, CC BY-SA 4.0"
+  },
+  {
+    id: "lokmanya-tilak-museum",
+    name: "Lokmanya Tilak Museum",
+    mapUrl: "https://maps.app.goo.gl/mVKy8J5vM55fEcN66",
+    tags: ["Museum", "Historical Site"],
+    about: "On the second floor of Kesari Wada in Narayan Peth — the mansion Bal Gangadhar Tilak acquired from Sayajirao Gaikwad III in 1905 and from which he ran his influential Marathi newspaper Kesari — sits a museum dedicated specifically to Tilak's life and papers, distinct from the wada's better-known role as home to the Kesariwada Ganpati mandal. Inaugurated in January 1999 by Sonia Gandhi and jointly managed by the Kesari Maratha Trust and the Tilak family, the museum was built around materials Tilak's descendants and the Trust had preserved for decades: the original printing press on which early issues of Kesari were run, his genealogical table and horoscope, a photograph of his birthplace at Gorewada village near Chikhli in Ratnagiri district, his Sanskrit writings, and a copy of Gita Rahasya, the philosophical commentary he composed while imprisoned by the British at Mandalay jail in Burma between 1908 and 1914 on charges of sedition. A recreated study, built by artist Suhas Bahulkar to reproduce Tilak's desk, bed and wall clock, sits alongside a life-size tableau of his Mandalay cell showing him at work on the manuscript.",
+    whatToNotice: "The original nineteenth-century printing press on which early editions of Kesari were set and run; Tilak's genealogical table and horoscope; the recreated Mandalay jail cell tableau depicting him writing Gita Rahasya during his 1908-1914 imprisonment; the life-sized replica study built by artist Suhas Bahulkar, reproducing his actual desk, bed and wall clock; certificates and photographs tracing his education at Deccan College, Fergusson College and New English School; oil paintings placing him alongside contemporaries such as Swami Vivekananda and Gandhi; and personal effects — his clothes, headgear, spectacles and correspondence — preserved by the Tilak family and the Kesari Maratha Trust.",
+    folklore: "The museum's centrepiece — the recreated Mandalay cell — commemorates one of the more improbable literary feats of the freedom movement: confined for six years on a sedition charge over his Kesari editorials, Tilak used the isolation not to despair but to produce Gita Rahasya, a dense philosophical reading of the Bhagavad Gita's call to disinterested action, written largely from memory since he had limited access to reference texts inside the jail. That the manuscript emerged from a British prison cell and went on to become one of the most widely read Marathi philosophical works of the twentieth century is a detail the museum's curators built an entire tableau around, letting visitors stand where the writing itself is staged to have happened rather than merely reading about it on a placard.",
+    image: "images/lokmanya-tilak-museum.jpg",
+    credit: "Kambletrupti, Wikimedia Commons, CC BY-SA 3.0"
+  },
+  {
+    id: "mahatma-phule-museum",
+    name: "Mahatma Phule Museum",
+    mapUrl: "https://maps.app.goo.gl/x3Na1QZ9TEzMQwoM7",
+    tags: ["Museum"],
+    about: "Pune's oldest museum began life in 1890 as the Poona Industrial Museum, set up under British colonial administration to showcase the region's industry, natural resources and craft. It was subsequently renamed the Lord Reay Museum, after a former Governor of Bombay, before the Maharashtra government renamed it once more in 1968 to honour Jyotirao Phule, the pioneering nineteenth-century social reformer who fought caste discrimination and championed women's education in the same city. The museum, in Shivaji Nagar about four kilometres from Pune Junction, is organised into galleries on forestry, agriculture, natural history, geology, engineering, armaments, handicrafts and architecture, and includes a taxidermy collection of animals, birds, insects, snakes and fish, plus an armoury of Mughal- and Maratha-period weapons alongside charts detailing the forts of Pune district. It has maintained a library since its founding, stocked with books on museology and historic technology, and since 1928 has published Srishtidnyan, reckoned the first popular-science monthly in Marathi. B.V. Gharpure, curator from 1930 to 1954, has a hall named for him within the museum.",
+    whatToNotice: "The taxidermy natural history gallery, with mounted specimens of the region's animals, birds, insects, snakes and fish; the armoury section displaying Mughal- and Maratha-period weapons alongside detailed charts of the historic forts scattered across Pune district; the working models of Indian hydro-electric and irrigation projects in the engineering gallery, relics of the museum's original industrial-showcase purpose; the museum's own institutional library, stocked since 1890 with books on early technology and museum science; and the continuing publication of Srishtidnyan, the Marathi-language popular-science monthly the museum has produced since 1928.",
+    folklore: "The museum's own name change traces a small but telling arc of post-independence India rewriting its civic memory: a colonial-era institution first built to display the empire's command of local industry and resources was, within two decades of independence, rededicated to Jyotirao Phule — a reformer who had spent his life challenging exactly the kind of hierarchical, caste-bound society the British colonial system had often reinforced. Locals sometimes point out the irony that a museum once named for a British governor of Bombay now bears the name of one of that era's fiercest home-grown critics, a renaming as much a statement of values as a change of signage.",
+    image: "images/mahatma-phule-museum.jpg",
+    credit: "Kalyani Kotkar, Wikimedia Commons, CC BY-SA 4.0"
+  },
+  {
     id: "aga-khan-palace",
     name: "Aga Khan Palace",
     mapQuery: "Aga Khan Palace, Nagar Road, Yerwada, Pune",
@@ -20,5 +75,26 @@ window.SIGHTS_BATCH_C = [
     folklore: "Mahadji Shinde's legend is inseparable from Panipat: badly wounded in the leg during the Maratha retreat and left for dead, he was saved by a humble water-carrier, whom he later elevated to a position of honour in his army once he rose to power. The injury left him permanently lame, yet within two decades the same limping survivor had made himself the most powerful Maratha chieftain in Hindustan — a rags-to-power rescue story still retold alongside his military triumphs.",
     image: "images/mahadji-shinde-chhatri.jpg",
     credit: "Bikashrd, Wikimedia Commons, CC BY-SA 4.0"
+  },
+  {
+    id: "national-war-memorial-southern-command",
+    name: "National War Memorial Southern Command",
+    mapUrl: "https://maps.app.goo.gl/yFdawANnCdLh6J5s7",
+    tags: ["Museum"],
+    about: "The National War Memorial Southern Command, in Pune Cantonment's Ghorpadi area, is dedicated to India's post-independence war dead and holds a distinction rare among Indian war memorials: it was raised entirely through citizens' contributions rather than government funding. The initiative began in 1996, during the silver jubilee commemorations of the 1971 Indo-Pakistani War, led by a citizens' committee chaired by Brigadier N.M. Grant (Retd.), and the completed memorial was dedicated to the nation on 15 August 1998. Its centrepiece is an 18-metre granite tower, ringed by marble panels inscribed with the names of 2,847 soldiers killed in India's wars and operations since 1947. A 2008 renovation, funded with Rs. 32 lakh from the Pune Cantonment Board, added a compound wall, entrance gate, landscaped pathways and a Vijayanta tank along with stone-engraved galleries recounting major battles; a further 2009 addition brought in a model of the frigate INS Trishul and a MiG-23BN fighter jet flown during the Kargil War, giving the site a tri-services character. The adjoining Southern Command Museum, opened in 2013, expands on this with uniforms, ammunition, vehicles and guns tracing the Southern Command's operational history.",
+    whatToNotice: "The 18-metre granite memorial tower at the centre of the complex, ringed by marble panels bearing the names of 2,847 soldiers killed in independent India's wars and operations; the Vijayanta tank and the MiG-23BN fighter jet — a Kargil War veteran aircraft — displayed among the outdoor exhibits; the model of the frigate INS Trishul, marking the memorial's deliberate tri-services (army, navy, air force) character; the stone-engraved galleries recounting the Southern Command's major battles and campaigns; and the sound-and-light show staged on the memorial grounds Friday through Sunday evenings.",
+    folklore: "What sets this memorial apart from most of India's official war monuments is written into its funding history rather than its stonework: it exists because ordinary citizens of Pune, moved by the 1996 silver jubilee remembrance of the 1971 war, organised and paid for its construction themselves through a dedicated committee, rather than waiting on a government budget line. That grassroots origin is still described locally as the reason the memorial carries a particular emotional weight in the Cantonment area — a monument the city built for its soldiers rather than one simply handed down to it.",
+    image: "images/national-war-memorial-southern-command.jpg"
+  },
+  {
+    id: "iskcon-pune",
+    name: "ISKCON NVCC Temple, Pune",
+    mapUrl: "https://maps.app.goo.gl/Ckr6Bum3x9FVkhTi9",
+    tags: ["Temple", "Modern Architecture"],
+    about: "ISKCON's presence in Pune began modestly in 1984 with a small city-centre centre; as the congregation outgrew it, HH Gopal Krishna Goswami Maharaj acquired a six-acre plot on the Katraj-Kondhwa road in 1995, and construction of what became the New Vedic Cultural Center (NVCC) proceeded under the spiritual direction of HH Radhanath Swami. Seven years in the building and funded substantially through devotee donations — including a \"Mark Your Square Feet\" campaign pricing contributions at Rs. 2,000 per square foot — the roughly Rs. 40 crore complex was formally inaugurated in 2013 by then-President of India Pranab Mukherjee on the auspicious occasion of Nityananda Trayodashi, and is today reckoned the largest temple in Pune. Architects Sachin Boradia and HG Sundarvar Das drew on the historic temple traditions of Jagannath Puri and Tirupati for its design.",
+    whatToNotice: "The three gold-plated altars in the main hall housing Sri Sri Radha Vrindavanchandra, Sri Sri Gaur Nitai and Sri Sri Jagannath Baldev Subhadra side by side; the adjoining Balaji temple built as a South Indian gopuram in miniature, complete with a Garuda Stambh and lotus-domed shikhara, holding Sri Balaji, Sri Devi, Bhu Devi and Andal; the sparkling chandeliers and hand-painted ceiling murals depicting Krishna-lila scenes throughout the main darshan hall; the intricately carved wooden pillars and doorframes; and the sheer scale of the pillared meditation hall, built to seat well over a thousand devotees at once.",
+    folklore: "The temple's construction leaned heavily on grassroots devotion rather than a single benefactor's largesse — the \"Mark Your Square Feet\" scheme let ordinary devotees literally buy a piece of the building for Rs. 2,000 a square foot, turning the seven-year build into a communal act stitched together one small donation at a time. Locals also point to its layout as a deliberate act of geography as much as devotion: within a single six-acre compound sits a North Indian-style Radha-Krishna sanctuary and a separate South Indian-style Balaji shrine modelled on Tirumala, letting a visitor move between two entirely distinct regional temple traditions without leaving the grounds.",
+    image: "images/iskcon-pune.jpg",
+    credit: "Niraj Suryawanshi, Wikimedia Commons, CC BY-SA 3.0"
   }
 ];
