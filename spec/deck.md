@@ -38,6 +38,12 @@ frameworks) that acts as a pocket walking guide to historic Pune.
   file roughly evenly sized (~8-9 entries). Coordinates aren't stored on the
   sight objects themselves (unlike `food-joints.js`) — they're only used
   transiently to compute insert position.
+- `maps/pune-sights-mymaps.csv` — a generated export (name, lat/lng, tags,
+  Maps link, about text) of every sight in `SIGHTS`, in deck slide order,
+  for importing into a Google My Maps map. Not read by the site itself —
+  it's a one-way source file for the "All Sights on Google Maps" hub card's
+  external map (see Explore hub below). Regenerate it and re-import into the
+  same My Maps map whenever sights are added or reordered.
 - `images/` — one photo per sight, downloaded locally (not hotlinked) so the
   deck works offline and never breaks when a source page changes. Preferred
   source: Wikimedia Commons, for stable URLs + open licensing. Each image's
@@ -67,9 +73,18 @@ frameworks) that acts as a pocket walking guide to historic Pune.
 
 ## Explore hub (slide 3)
 
-Sits between About Pune and the index. Five entry points into the deck:
+Sits between About Pune and the index. Six entry points into the deck:
 - **All Sights** — internal button (`.hub-card.index-shortcut`) that jumps to
   the index slide.
+- **All Sights on Google Maps** — external link to a Google My Maps map
+  (`https://www.google.com/maps/d/u/0/edit?mid=1Uo-uzWsRhivI7GJpeM8onk8W2ji9B80&usp=sharing`)
+  plotting every sight as a numbered pin in the same order as the deck's
+  slide sequence, built by importing `maps/pune-sights-mymaps.csv` (see
+  below) into mymaps.google.com. This is a hardcoded link to a map hosted
+  outside the repo, not derived from `SIGHTS` at runtime — if sights are
+  reordered or added later, re-export `maps/pune-sights-mymaps.csv` and
+  re-import it into the same My Maps map (or update the URL here if a new
+  map is created) to keep the two in sync.
 - **The Culinary Heritage of Pune** — external link (`target="_blank"`) to
   `food.html`, a separate standalone page (outside the swipe deck) listing
   Pune's legendary old eateries — see "Culinary Heritage page" below.
